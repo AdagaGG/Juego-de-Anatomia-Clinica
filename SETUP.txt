@@ -1,0 +1,98 @@
+═════════════════════════════════════════════════════════════════
+  🏥 MONITOR VITAL: DRA. PERFINKA
+  Instrucciones de Instalación Rápida
+═════════════════════════════════════════════════════════════════
+
+OPCIÓN 1: ELECTRON (Recomendado - App de Escritorio)
+─────────────────────────────────────────────────────
+
+1️⃣  INSTALAR NODE.JS
+   ├─ Ve a: https://nodejs.org (versión LTS)
+   ├─ Descarga el .msi
+   └─ Ejecuta: Next → Next → Finish
+
+2️⃣  ABRIR POWERSHELL EN LA CARPETA
+   ├─ En la carpeta del proyecto
+   ├─ Shift + Click Derecho → "Abrir ventana PowerShell aquí"
+   └─ O desde VS Code: Terminal → New Terminal
+
+3️⃣  EJECUTAR UNA VEZ (Instalación)
+   └─ npm install
+
+4️⃣  EJECUTAR SIEMPRE (Para jugar)
+   ├─ npm start
+   └─ O haz doble click en: start.bat
+
+5️⃣  CREAR EJECUTABLE (Opcional)
+   ├─ npm run build-win
+   ├─ Encontrarás el instalador en: dist/
+   └─ Distribuible en USB a cualquier PC
+
+═════════════════════════════════════════════════════════════════
+
+OPCIÓN 2: PYTHON (Alternativa más fácil)
+─────────────────────────────────────────
+
+1️⃣  INSTALAR PYWEBVIEW
+   └─ pip install pywebview
+
+2️⃣  EJECUTAR
+   ├─ python run_game.py
+   └─ O haz doble click en: start-python.bat
+
+═════════════════════════════════════════════════════════════════
+
+SOLUCIÓN DE PROBLEMAS
+─────────────────────
+
+❌ "npm: comando no encontrado"
+   └─ Reinstala Node.js y reinicia PowerShell
+
+❌ "module not found"
+   └─ Ejecuta: npm install (asegúrate de estar en la carpeta)
+
+❌ "main.js not found"
+   └─ Verifica que main.js existe en la carpeta
+
+❌ "doctor-*.png no cargan"
+   └─ Coloca doctor-happy.png, doctor-neutral.png, doctor-angry.png
+      en la misma carpeta que index.html
+
+❌ "Audio no funciona"
+   └─ Es normal en navegador. En app de escritorio funciona.
+   └─ Dale click a la ventana de la app primero.
+
+═════════════════════════════════════════════════════════════════
+
+ARCHIVOS PRINCIPALES
+────────────────────
+
+index.html        → Interfaz del juego
+style.css         → Diseño CRT y animaciones
+script.js         → Lógica del juego (preguntas, audio, ECG)
+main.js           → Lanzador Electron
+run_game.py       → Lanzador Python
+package.json      → Configuración Node.js
+start.bat         → Atajo Electron
+start-python.bat  → Atajo Python
+doctor-*.png      → Sprites de la Dra. Perfinka
+
+═════════════════════════════════════════════════════════════════
+
+CARACTERÍSTICAS
+───────────────
+
+✅ ECG real (patrón P-QRS-T)
+✅ 15 preguntas de anatomía
+✅ Código Azul en preguntas 5, 10, 15 (BPM 140, timer 5s)
+✅ Sonidos sintetizados (latido, error, éxito)
+✅ Sprites de Dra. Perfinka (happy/neutral/angry)
+✅ Interfaz CRT estilo 80s
+✅ 100% offline (sin internet)
+✅ Compatible Windows/Mac/Linux
+
+═════════════════════════════════════════════════════════════════
+
+Preguntas o problemas → Ver README.md
+
+¡A jugar! 🎮

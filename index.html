@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Monitor CRT - Dra. Perfinka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-root">
+
+                            <!-- BOOT / START -->
+                            <div id="bootOverlay" class="overlay boot">
+                                <div class="boot-panel">
+                                    <pre id="bootText" class="boot-text"></pre>
+                                    <button id="startBtn" class="start-btn">INICIAR TURNO</button>
+                                </div>
+                            </div>
+
+                            <!-- MAIN MONITOR FRAME (CRT) -->
+                            <div id="monitorFrame" class="monitor-frame crt-flicker">
+                                <div class="monitor-inner">
+                                    <div class="monitor-topbar">MONITOR VITAL • DRA. PERFINKA</div>
+
+                                    <div class="monitor-body">
+                                        <div class="left-panel">
+                                            <canvas id="ecgCanvas" width="900" height="220"></canvas>
+                                            <div class="ecg-info">
+                                                <span id="frequencia">60 bpm</span>
+                                                <span id="estadoTag" class="estado normal">NORMAL</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="right-panel">
+                                            <div class="stats">
+                                                <div><strong>VIDAS:</strong> <span id="vidas">3</span></div>
+                                                <div><strong>PUNTOS:</strong> <span id="puntuacion">0</span></div>
+                                                <div><strong>PREGUNTA:</strong> <span id="preguntaActual">1/15</span></div>
+                                            </div>
+
+                                            <div class="doctor-portrait">
+                                                <div class="portrait-box">
+                                                    <!-- No external images: simple pixelated face via CSS -->
+                                                    <div class="face neutral"></div>
+                                                </div>
+                                                <div class="doctor-speech"><span id="speechText">Dra. Perfinka lista.</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="game-area">
+                                        <div class="question-box">
+                                            <div id="pregunta" class="pregunta">Cargando pregunta...</div>
+                                        </div>
+
+                                        <div class="options">
+                                            <button class="opt" data-index="0"><span class="letra">A</span> <span class="txt" id="opt0"></span></button>
+                                            <button class="opt" data-index="1"><span class="letra">B</span> <span class="txt" id="opt1"></span></button>
+                                            <button class="opt" data-index="2"><span class="letra">C</span> <span class="txt" id="opt2"></span></button>
+                                            <button class="opt" data-index="3"><span class="letra">D</span> <span class="txt" id="opt3"></span></button>
+                                        </div>
+
+                                        <div class="controls">
+                                            <div class="timer">
+                                                <div class="timer-bar"><div id="timerFill" class="timer-fill"></div></div>
+                                                <div id="timerText" class="timer-text">20s</div>
+                                            </div>
+                                            <div class="feedback" id="feedback"></div>
+                                            <button id="continueBtn" class="continue-btn" style="display:none">CONTINUAR</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+        </div>
+
+        <!-- MEMORÁNDUM (Game Over) -->
+        <div id="memoOverlay" class="overlay memo" style="display:none">
+            <div class="memo-card">
+                <h2>MEMORÁNDUM DE EXPULSIÓN</h2>
+                <p><strong>Causa:</strong> Incompetencia Anatómica.</p>
+                <p><strong>Detalle:</strong> El estudiante demostró incapacidad para identificar estructuras críticas.</p>
+                <p style="margin-top: 20px; text-align:right">Firma: Dra. Perfinka</p>
+                <button id="retryBtn" class="start-btn">REINTENTAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
