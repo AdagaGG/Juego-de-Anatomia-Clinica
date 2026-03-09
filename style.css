@@ -400,7 +400,14 @@ body{
     }
 
     /* Responsive */
-    @media(max-width:900px){.right-panel{display:none}.monitor-body{flex-direction:column}}
+    @media(max-width:900px){
+        .monitor-body{flex-direction:column}
+        .right-panel{display:flex; flex-direction:row; width:100%; align-items:center; gap:12px; margin-top:8px}
+        .right-panel .stats{display:flex; flex:1; justify-content:space-around; background:rgba(0,255,0,0.05); padding:8px; border-radius:6px; font-size:14px}
+        .right-panel .doctor-portrait{display:flex; align-items:center; gap:12px}
+        .right-panel .portrait-box{width:60px; height:60px; padding:4px}
+        .right-panel .doctor-speech{font-size:12px}
+    }
 
 /* ========================================
    MOBILE-FIRST TRANSFORMACIÓN
@@ -476,7 +483,7 @@ body{
     /* RIGHT PANEL: Estadísticas horizontales compactas */
     .right-panel {
         width: 100%;
-        flex-direction: row;
+        flex-direction: column;
         gap: 8px;
         flex: 0 0 auto;
     }
@@ -484,19 +491,28 @@ body{
     .stats {
         display: flex;
         justify-content: space-between;
-        flex: 1;
-        font-size: 14px;
+        width: 100%;
+        background: rgba(0, 255, 0, 0.05);
+        padding: 8px;
+        border-radius: 6px;
+        font-size: 12px;
+    }
+
+    .doctor-portrait {
+        display: flex;
+        align-items: center;
+        width: 100%;
         gap: 8px;
     }
 
-    .stats > div {
-        flex: 1;
-        text-align: center;
-    }
-
-    /* Ocultar portrait de la doctora en móvil para ahorrar espacio */
-    .doctor-portrait {
+    .portrait-box {
         display: none;
+    }
+    
+    .doctor-speech {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
     }
 
     /* GAME AREA: Más compacto */
